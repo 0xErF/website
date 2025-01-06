@@ -1,0 +1,32 @@
++++
+title = 'Waldzustandsbericht Webseite'
+date = 2025-01-04T07:07:07+01:00
+draft = false
++++
+## Problem
+Der Waldzustandsbericht ist statisch und hat nur Informationen zum aktuellen Jahr.
+Außerdem sind die Kategorisierungen (Schadensgrad) aus der Zeit gefallen.
+Eine Baumkronenverlichtung von x% wird heute anders gesehen als früher.
+
+## Lösung
+Interaktive Einstellungen (Jahre, Baumkronenverlichtungen) generieren Tabellen.
+
+## Zielbild
+Eine Webseite.
+
+## Nebenbedingungen
+- Nichttechniker müssen die Seite Bedienen können.
+- Nur für "Leute vom Fach" (Nichtfachler müssen die Seite nicht verstehen).
+- Kein Fokus auf mobile Version (Handy).
+
+## TODO
+* Lizenzen
+	** Creative Commons für Daten?
+		*** siehe https://chooser-beta.creativecommons.org/
+	** AGPLv3 für Code?
+* Projektmanagement
+    ** Jira Board?
+* Technik
+		** Welches Grafikframework?
+		** Welches HTML-Framework?
+				*** hugo möglich mit chartjs?

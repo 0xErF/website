@@ -1,0 +1,29 @@
+baseURL = 'https://0xerf.github.io/website/'
+languageCode = 'en-us'
+title = '0xErF'
+theme = 'paperesque'
+publishDir = 'docs'
+
+
+[security.exec]
+allow = ["^dart-sass-embedded$", "^go$", "^npx$", "^postcss$", "^asciidoctor$"]
+
+
+
+[[params.menu]]
+  name = "Blog"
+  url = "blogpost/"
+[[params.menu]]
+  name = "Projekte"
+  url = "projekte/"
+
+[[params.topmenu]]
+  name = "Blog"
+  url = "blogpost/"
+[[params.topmenu]]
+  name = "Projekte"
+  url = "projekte/"
+
+[[params.topmenu]]
+  name = "rss"
+  url = "index.xml"

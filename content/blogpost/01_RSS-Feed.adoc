@@ -1,0 +1,107 @@
+---
+title: "Eigene Podcast Feeds"
+date: 2025-01-05T10:35:15+01:00
+lastmod: 2025-01-06T12:00:01+01:00
+draft: false
+---
+
+Man hat oft das Problem, dass man Podcast-Features (wie viel % von Audio-Lektion/Hörbuch) von Dateien aus dem Internet haben möchte.
+Z.B. der link:https://dj4uf.de/morsen[Morselehrgang von DJ4UF].
+
+Um den Podcast-Player nutzen zu können muss man entweder alle Dateien herunterladen, oder einen Podcast-Feed erstellen.
+Ich habe einen Podcast-Feed erstellt, da die Flexibilität und Verteilbarkeit besser ist:
+
+link:/website/podcast.rss[Podcast-Feed] (Kopiere den Link und füge ihn in deine Podcast-App ein)
+
+# Technischer Hintergrund
+
+Siehe im link:https://www.rssboard.org/rss-specification[RSS-Standard] nach, wie man einen Feed erstellt.
+Wichtig sind:
+
+*channel*
+
+* Title
+* Description
+* Image
+
+*item*
+
+* Title
+* Description
+* Enclosure (hier ist der Link zur Datei hinterlegt)
+
+
+
+# Unvollständiger Code (nur ein Item)
+[source,xml]
+----
+<rss version="2.0">
+      <channel>
+          <title>
+              Morselehrgang DJ4UF
+          </title>
+          <description>
+              Ein guter Lehrgang von Eckart Moltrecht. Dieser Podcast verlinkt nur auf seine Seite.
+          </description>
+          <link>
+              https://dj4uf.de/morsen
+          </link>
+          <lastBuildDate>
+              Sun, 05 Jan 2025 08:42:43 +0100
+          </lastBuildDate>
+          <generator>
+              podcast.de generator
+          </generator>
+          <image>
+              <url>           https://dj4uf.de/storage/cd-label.jpg
+              </url>
+              <title>
+                  podcast Logo
+              </title>
+              <link>
+              https://dj4uf.de/morsen
+              </link>
+              <description>
+                  Bild des Morselehrganges
+              </description>
+          </image>
+          <language>
+              de-de
+          </language>
+          <copyright>
+              CC podcast.de 2005
+          </copyright>
+          <managingEditor>
+              eckart.moltrecht@gmail.com (Eckart Moltrecht)
+          </managingEditor>
+          <webMaster>
+              eckart.moltrecht@gmail.com (Eckart Moltrecht)
+          </webMaster>
+          <category>
+              Courses
+          </category>
+          <ttl>
+              600
+          </ttl>
+
+          <item>
+              <title>
+                  Lektion 0
+              </title>
+              <link>
+		https://dj4uf.de/morsen
+              </link>
+              <description>
+                  Einführung in den Lehrgang.
+              </description>
+              <author>
+                  eckart.moltrecht@gmail.com (Eckart Moltrecht)
+              </author>
+              <enclosure url="https://dj4uf.de/storage/morsen/DJ4UF_Morsen00.mp3"
+                  length="833536"
+                  type="audio/mpeg"
+              />
+          </item>
+      </channel>
+  </rss>
+----
