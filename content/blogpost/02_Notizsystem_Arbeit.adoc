@@ -1,0 +1,87 @@
+---
+title: "Notizsystem Arbeit"
+date: 2025-01-12T09:05:54+01:00
+draft: false
+---
+
+== TLDR:
+
+* kurzlebige Notizen/Erinnerungen gehören auf ein Post-it und am Monitor
+* schreibe Meetingnotizen auf einen Schmierzettel (einfaches Kopierpapier)
+* erstelle daraus 1-X atomare Zettelkasten-Notizen (nur für langlebige Notizen) + ordne sie ein + aktualisiere Schlagwortregister + erstelle ggf. Querverweise zu/von anderen Zetteln
+* Informiere dich selbstständig über _Zettelkasten_ und _Atomic Notes_,
+
+== Problembeschreibung:
+
+Im Beruf muss man sich häufig langlebige Notizen (relevant > 1 Monat) machen. Folgende System funktionieren für mich nicht:
+
+* Notizbuch
+** Wiederfindbarkeit von alten Notizen (> 1 Jahr) ist schlecht
+** starr, da Seiten geklebt und nicht wie Karteikarten einzeln/flexibel
+*** Hinzufügen von Notizen zu Thema X nicht auf der Seite möglich. Es muss eine neue Seite erstellt werden, die weit entfernt von der eigentlichen Seite ist.
+*** Schlagwortregistererstellung ist schwierig
+* Elektronisches Wiki/Confluence
+** schlechtes Verhalten wird gefördert (einfach nur kopieren, zu viel Text statt atomarer Notizen [ein Gedanke pro Karteikarte], keine eigenen Worte, nicht verstanden)
+** Man kann keine Karteikarten auf den Tisch legen und sich einen Überblick verschaffen (man hat immer nur eine Seite offen)
+
+Aus den Problemen gehen die Anforderungen heraus:
+
+* Einfachheit in der täglichen Anwendung (wenn man gelernt hat wie)
+* Wiederfindbarkeit
+* Übersichtlichkeit (durch Karten auf den Tisch legen und Schlagwortregister)
+* Gutes Verhalten wird gefördert (Karteikarten haben eine feste Größe für Text, deshalb muss man Notizen in eigenen Gedanken aufschreiben)
+
+== Methode
+
+Das Notizsystem besteht aus folgendem:
+
+* Zettelkasten
+* gefaltetes A4-papier
+* Post its
+
+=== Notizen erstellen
+
+Während des Meetings werden alle Notizen auf einen Schmierzettel geschrieben. Ich nutze einfaches A4-Kopierpapier,
+welches ich auf A6 falte. Nach dem Meeting kreise ich alle wichtigen Informationen ein, überlege mir eine Struktur
+und schreibe sie auf Karteikarten. Jede verarbeitete Information wird durchgestrichen.
+
+Beispiel mit 4 Karteikarten zum Thema Avalkredite
+
+* Avalkredit (kurze allgemeine Beschreibung)
+** Details/Konditionen (z.B. wann werden Zinsen zurück gezahlt)
+** Vor-/Nachteile (z.B. Beleg für hohe Kreditwürdigkeit einer Firma)
+** Nutzung/Statistik (z.B. die meisten Firmenkredite werden als Avalkredite genutzt)
+
+=== Einsortieren und und Zettelnummern vergeben
+
+Nachdem man nun seine strukturierten Karteikarten hat, muss man sich überlegen, was neben und über der obersten Karteikarte stehen soll.
+
+Auf einer Ebene mit Avalkredit würde ich weitere Kreditarten (z.B. Ballonkredit) erwarten. Eine Ebene darüber würde ich Kredite erwarten,
+die wiederum unter Bankfachlichkeit einsortiert sind.
+
+Die Zettelnummern müssen nun auf die erstellen Zettel. Wenn Kredite die Nummer 5.2 haben, bekommt Avalkredit die Nummer 5.2.1 , es sei denn es
+gibt den Zettel schon (z.B. Ballonkredit 5.2.1). Dann bekommt Avalkredite die Nummer 5.2.2. Details/Konditionen hat die Nummer 5.2.2.1 und so weiter.
+
+
+=== Schlagwortregister und weitere Zettel
+
+Jetzt sollte man das Schlagwortregister erweitern. Für dieses Beispiel würde ich nur Avalkredite hinzufügen.
+Außerdem sollte man seine bestehenden Zettel erweitern. Falls man einen Zettel mit wie "Kreditarten für Firmen" hat, sollte
+man dort Avalkredite hinzufügen.
+
+=== Zeitaufwand
+
+Das Lernen der Methode dauert ein paar Tage. Das Schreiben der oben genannten vier Zettel dauert ca. 15 Minuten.
+Dieser Zeitaufwand ist mMn. vertretbar, da die Alternativen schlechter sind oder man Wissen verliert.
+
+
+== Über Notizen:
+Notizen sind keine Aufgaben (Kollege X anrufen, Thema Y vorbereiten), ich tracke diese aber auch teilweise per Post-it.
+Es gibt verschiedene Arten von Notizen:
+
+* kurzlebige Notizen/Erinnerungen (z.B. "Umgebung X ist wegen Wartungsarbeiten Donnerstag nicht erreichbar")
+* langlebige Notizen (Notizen, die in einem Monat noch relevant sind z.B. "Wie funktioniert ein Avalkredit?")
+
+Ein Problem bei Notizen ist, dass man sie für sein jetziges Ich schreibt. Das jetzige Ich kennt den ganzen Kontext der Notiz,
+das zukunfts-Ich kennt diesen Kontext nicht (mehr). Eine Lösung ist, dass man Notizen so schreibt, als ob man einen Kollegen das Thema erklären möchte.
+Eine weitere Hilfe ist es, atomare Notizen zu verfassen und Themen in "Unternotizen" zu clustern.
