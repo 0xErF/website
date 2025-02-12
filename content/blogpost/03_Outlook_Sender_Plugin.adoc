@@ -1,0 +1,54 @@
+---
+title: "Outlook Sender Plugin für Firmen"
+date: 2025-02-12T22:34:07+01:00
+draft: true
+---
+
+
+== Problembeschreibung:
+
+* Phishing Mails kosten Unternehmen Milliarden jedes Jahr
+* Man braucht einen Weg um herauszufinden, ob der Absender auch wirklich der richtige ist
+** Ich sehe einen grünen Haken neben der Senderadresse, wenn der Sender bestätigt ist
+** Ich sehe ein rotes Kreuz neben der Senderadresse, wenn der Sender nicht bestätigt ist
+** Sollte ich ein gelbes Ausrufezeichen sehen?
+*** Wahrscheinlich ja, wenn der Sender eine Signatur schickt, die ich aber nicht habe
+* Es muss einfach einzurichten sein. Ein zentral installiertes und gesteuertes Plugin ist wahrscheinlich der beste Weg
+
+
+== Features:
+
+=== Benutzersicht
+* Admin
+** erstellt über ein Tool
+*** alle Zertifikate der Nutzer
+*** die Liste der vertrauenswürdigen Zertifikate
+** installiert automatisch das Plugin auf den Rechner des Nutzers
+* Empfänger
+** updated vom Schlüsselserver alle Schlüssel automatisch und regulär
+** eigene Schlüsselupdates werden hochgeladen
+* Sender
+** updated vom Schlüsselserver alle Schlüssel automatisch und regulär
+** eigene Schlüsselupdates werden hochgeladen
+
+=== Softwaresicht
+
+* Plugin
+**
+* Admintool
+
+== Zu erstellende Software:
+
+* Outlook Plugin
+* Admin Tool
+* (Schlüsselserver)
+* (Abhängigkeiten z.B. Kleopatra)
+
+
+== Todo:
+
+* Symmetrische vs. Asymetrische Schlüssel
+* Zeitaufwand
+* Technologiestack (MS Plugin-Sprache?)
+* Welche Software muss auf dem Rechner installiert sein (Kleopatra?)
+* Was ist schon verfügbar? Braucht es nur das Admin-Tool?
