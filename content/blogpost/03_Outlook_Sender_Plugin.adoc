@@ -1,7 +1,7 @@
 ---
 title: "Outlook Sender Plugin für Firmen"
 date: 2025-02-12T22:34:07+01:00
-draft: true
+draft: false
 ---
 
 
