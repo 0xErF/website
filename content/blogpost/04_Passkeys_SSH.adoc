@@ -1,0 +1,12 @@
+---
+title: "Passkeys sollten den SSH Workflow haben"
+date: 2025-02-24T21:52:33+01:00
+draft: true
+---
+
+
+Problem mit Passkeys: sie machen es nicht einfacher
+
+UseCase: Nur 1 Konto hinterlegt -> automatisch einloggen (Bestätigung Klick im Browser)
+
+UseCase: 2 Konten hinterlegt -> Browser bietet Auswahl (nicht die Webseite)

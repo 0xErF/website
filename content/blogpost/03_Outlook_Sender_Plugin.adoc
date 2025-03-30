@@ -52,3 +52,7 @@ draft: true
 * Technologiestack (MS Plugin-Sprache?)
 * Welche Software muss auf dem Rechner installiert sein (Kleopatra?)
 * Was ist schon verfügbar? Braucht es nur das Admin-Tool?
+
+== unsortierte Notizen:
+
+* für alle OS gebraucht? Win, Mac, Linux, Android, iOS
