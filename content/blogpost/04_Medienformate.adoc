@@ -1,0 +1,15 @@
+---
+title: "Freie Medien Formate"
+date: 2025-04-15T13:14:17+02:00
+draft: false
+---
+
+== TLDR:
+
+* Audio
+** opus als verlustbehafteter Codec
+** flacc als verlustfreier Codec
+** ogg als Container
+* Video
+** vp9 als videoformat
+** mkv als Container
