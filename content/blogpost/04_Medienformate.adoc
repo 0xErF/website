@@ -1,15 +1,29 @@
 ---
 title: "Freie Medien Formate"
 date: 2025-04-15T13:14:17+02:00
+lastmod: 2025-05-07T13:14:17+02:00
 draft: false
 ---
 
-== TLDR:
+== Codecs:
 
 * Audio
-** opus als verlustbehafteter Codec
-** flacc als verlustfreier Codec
-** ogg als Container
+** https://de.wikipedia.org/wiki/Opus_(Audioformat)[opus] als verlustbehafteter Codec
+** https://de.wikipedia.org/wiki/Free_Lossless_Audio_Codec[flac] als verlustfreier Codec
+** https://de.wikipedia.org/wiki/Ogg[ogg] als Container (nur sinnvoll wenn mehr als Stereo, z.B. Dolby-Surround genutzt wird)
+** https://ffmpeg.org/ffmpeg.html#Audio-Options[Konvertieren]: `ffmpeg -i input.mp3 -b:a 32k -vbr on output.opus`
+*** `-b:a 32k` Bitrate
+*** `-vbr on` variable bitrate mode
+
 * Video
-** vp9 als videoformat
-** mkv als Container
+** https://de.wikipedia.org/wiki/VP9[vp9] als Videoformat
+** https://de.wikipedia.org/wiki/Matroska[mkv] als Container (alternativ https://de.wikipedia.org/wiki/WebM[WebM])
+
+* Bilder
+** https://de.wikipedia.org/wiki/WebP[WebP]
+** Konvertieren: `ffmpeg -i image.jpg image.webp`
+
+== Hintergrund:
+
+* https://en.wikipedia.org/wiki/List_of_open-source_codecs[Wikipedia - List of open-source codecs]
+* https://en.wikipedia.org/wiki/Alliance_for_Open_Media[Wikipedia - Alliance for Open Media]
