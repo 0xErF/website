@@ -29,18 +29,18 @@
 <meta property="og:url" content="https://0xerf.github.io/website/blogpost/03_medienformate/">
   <meta property="og:site_name" content="0xErF">
   <meta property="og:title" content="Freie Medien Formate">
-  <meta property="og:description" content="Codecs: Audio
-opus als verlustbehafteter Codec
+  <meta property="og:description" content="Codecs: Audio opus als verlustbehafteter Codec
 flac als verlustfreier Codec
 ogg als Container (nur sinnvoll wenn mehr als Stereo, z.B. Dolby-Surround genutzt wird)
 Konvertieren: ffmpeg -i input.mp3 -b:a 32k -vbr on output.opus
--b:a 32k Bitrate
+-b:a 32k Bitrate, empfohlen:
+24-32k Podcast
+64-96k Musik
+128k transparent
 -vbr on variable bitrate mode
-Video
-vp9 als Videoformat
+Video vp9 als Videoformat
 mkv als Container (alternativ WebM)
-Bilder
-WebP
+Bilder WebP
 Konvertieren: ffmpeg -i image.jpg image.webp
 Hintergrund: Wikipedia - List of open-source codecs
 Wikipedia - Alliance for Open Media">
@@ -48,7 +48,7 @@ Wikipedia - Alliance for Open Media">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blogpost">
     <meta property="article:published_time" content="2025-04-15T13:14:17+02:00">
-    <meta property="article:modified_time" content="2025-05-07T13:14:17+02:00">
+    <meta property="article:modified_time" content="2025-05-08T13:14:17+02:00">
 
 <meta property="og:site_name" content="0xErF" />
 
@@ -56,8 +56,6 @@ Wikipedia - Alliance for Open Media">
 <meta name="twitter:title" content="Freie Medien Formate"/>
 <meta name="twitter:description" content="
 Codecs:
-
-
 
 
 Audio
@@ -77,7 +75,20 @@ Konvertieren: ffmpeg -i input.mp3 -b:a 32k -vbr on output.opus
 
 
 
--b:a 32k Bitrate
+-b:a 32k Bitrate, empfohlen:
+
+
+
+24-32k Podcast
+
+
+64-96k Musik
+
+
+128k transparent
+
+
+
 
 
 -vbr on variable bitrate mode
@@ -110,8 +121,6 @@ WebP
 
 
 Konvertieren: ffmpeg -i image.jpg image.webp
-
-
 
 
 
@@ -130,31 +139,29 @@ Wikipedia - List of open-source codecs
 Wikipedia - Alliance for Open Media
 
 
-
-
 "/>
 
 
 
   <meta itemprop="name" content="Freie Medien Formate">
-  <meta itemprop="description" content="Codecs: Audio
-opus als verlustbehafteter Codec
+  <meta itemprop="description" content="Codecs: Audio opus als verlustbehafteter Codec
 flac als verlustfreier Codec
 ogg als Container (nur sinnvoll wenn mehr als Stereo, z.B. Dolby-Surround genutzt wird)
 Konvertieren: ffmpeg -i input.mp3 -b:a 32k -vbr on output.opus
--b:a 32k Bitrate
+-b:a 32k Bitrate, empfohlen:
+24-32k Podcast
+64-96k Musik
+128k transparent
 -vbr on variable bitrate mode
-Video
-vp9 als Videoformat
+Video vp9 als Videoformat
 mkv als Container (alternativ WebM)
-Bilder
-WebP
+Bilder WebP
 Konvertieren: ffmpeg -i image.jpg image.webp
 Hintergrund: Wikipedia - List of open-source codecs
 Wikipedia - Alliance for Open Media">
   <meta itemprop="datePublished" content="2025-04-15T13:14:17+02:00">
-  <meta itemprop="dateModified" content="2025-05-07T13:14:17+02:00">
-  <meta itemprop="wordCount" content="69">
+  <meta itemprop="dateModified" content="2025-05-08T13:14:17+02:00">
+  <meta itemprop="wordCount" content="76">
 
 
     <title>Freie Medien Formate || 0xErF</title>
@@ -243,7 +250,7 @@ Wikipedia - Alliance for Open Media">
   
     
       <div class="post-date">Created: <span itemprop="datePublished">April 15, 2025</span></div>
-      <div class="post-date">Last Edited: <span itemprop="dateModified">May 7, 2025</span></div>
+      <div class="post-date">Last Edited: <span itemprop="dateModified">May 8, 2025</span></div>
     
   
   
@@ -251,10 +258,8 @@ Wikipedia - Alliance for Open Media">
     <div class="sect1">
 <h2 id="_codecs">Codecs:</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Audio</p>
+<div class="sect2">
+<h3 id="_audio">Audio</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -271,7 +276,20 @@ Wikipedia - Alliance for Open Media">
 <div class="ulist">
 <ul>
 <li>
-<p><code>-b:a 32k</code> Bitrate</p>
+<p><code>-b:a 32k</code> Bitrate, <a href="https://wiki.xiph.org/Opus_Recommended_Settings#Recommended_Bitrates">empfohlen:</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>24-32k Podcast</p>
+</li>
+<li>
+<p>64-96k Musik</p>
+</li>
+<li>
+<p>128k transparent</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><code>-vbr on</code> variable bitrate mode</p>
@@ -281,9 +299,9 @@ Wikipedia - Alliance for Open Media">
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Video</p>
+</div>
+<div class="sect2">
+<h3 id="_video">Video</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -294,9 +312,9 @@ Wikipedia - Alliance for Open Media">
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Bilder</p>
+</div>
+<div class="sect2">
+<h3 id="_bilder">Bilder</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -307,8 +325,6 @@ Wikipedia - Alliance for Open Media">
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>

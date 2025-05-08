@@ -1,27 +1,33 @@
 ---
 title: "Freie Medien Formate"
 date: 2025-04-15T13:14:17+02:00
-lastmod: 2025-05-07T13:14:17+02:00
+lastmod: 2025-05-08T13:14:17+02:00
 draft: false
 ---
 
 == Codecs:
 
-* Audio
-** https://de.wikipedia.org/wiki/Opus_(Audioformat)[opus] als verlustbehafteter Codec
-** https://de.wikipedia.org/wiki/Free_Lossless_Audio_Codec[flac] als verlustfreier Codec
-** https://de.wikipedia.org/wiki/Ogg[ogg] als Container (nur sinnvoll wenn mehr als Stereo, z.B. Dolby-Surround genutzt wird)
-** https://ffmpeg.org/ffmpeg.html#Audio-Options[Konvertieren]: `ffmpeg -i input.mp3 -b:a 32k -vbr on output.opus`
-*** `-b:a 32k` Bitrate
-*** `-vbr on` variable bitrate mode
+=== Audio
 
-* Video
-** https://de.wikipedia.org/wiki/VP9[vp9] als Videoformat
-** https://de.wikipedia.org/wiki/Matroska[mkv] als Container (alternativ https://de.wikipedia.org/wiki/WebM[WebM])
+* https://de.wikipedia.org/wiki/Opus_(Audioformat)[opus] als verlustbehafteter Codec
+* https://de.wikipedia.org/wiki/Free_Lossless_Audio_Codec[flac] als verlustfreier Codec
+* https://de.wikipedia.org/wiki/Ogg[ogg] als Container (nur sinnvoll wenn mehr als Stereo, z.B. Dolby-Surround genutzt wird)
+* https://ffmpeg.org/ffmpeg.html#Audio-Options[Konvertieren]: `ffmpeg -i input.mp3 -b:a 32k -vbr on output.opus`
+** `-b:a 32k` Bitrate, https://wiki.xiph.org/Opus_Recommended_Settings#Recommended_Bitrates[empfohlen:]
+*** 24-32k Podcast
+*** 64-96k Musik
+*** 128k transparent
+** `-vbr on` variable bitrate mode
 
-* Bilder
-** https://de.wikipedia.org/wiki/WebP[WebP]
-** Konvertieren: `ffmpeg -i image.jpg image.webp`
+=== Video
+
+* https://de.wikipedia.org/wiki/VP9[vp9] als Videoformat
+* https://de.wikipedia.org/wiki/Matroska[mkv] als Container (alternativ https://de.wikipedia.org/wiki/WebM[WebM])
+
+=== Bilder
+
+* https://de.wikipedia.org/wiki/WebP[WebP]
+* Konvertieren: `ffmpeg -i image.jpg image.webp`
 
 == Hintergrund:
 
