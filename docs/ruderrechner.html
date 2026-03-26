@@ -32,20 +32,20 @@
 				<td>Sec1</td>
 			</tr>
 			<tr>
-				<td><button type="button" onClick="increase('minutenfeld')">+</button></td>
-				<td><button type="button" onClick="increase('sekundenZehnfeld')">+</button></td>
-				<td><button type="button" onClick="increase('sekundenEinzelnfeld')">+</button></td>
+				<td align="center"><button type="button" onClick="increase('minutenfeld')">+</button></td>
+				<td align="center"><button type="button" onClick="increase('sekundenZehnfeld')">+</button></td>
+				<td align="center"><button type="button" onClick="increase('sekundenEinzelnfeld')">+</button></td>
 			</tr>
 
 			<tr>
-				<td><input type="number" id="minutenfeld" value="2" min="0" max="9"></td>
-				<td><input type="number" id="sekundenZehnfeld" value="1" min="0" max="5"></td>
-				<td><input type="number" id="sekundenEinzelnfeld" value="0" min="0" max="9"></td>
+				<td align="center"><span id="minutenfeld" >2</span></td>
+				<td align="center"><span id="sekundenZehnfeld" >1</span></td>
+				<td align="center"><span id="sekundenEinzelnfeld" >0</span></td>
 			</tr>
 			<tr>
-				<td><button type="button" onClick="decrease('minutenfeld')">-</button></td>
-				<td><button type="button" onClick="decrease('sekundenZehnfeld')">-</button></td>
-				<td><button type="button" onClick="decrease('sekundenEinzelnfeld')">-</button></td>
+				<td align="center"><button type="button" onClick="decrease('minutenfeld')">-</button></td>
+				<td align="center"><button type="button" onClick="decrease('sekundenZehnfeld')">-</button></td>
+				<td align="center"><button type="button" onClick="decrease('sekundenEinzelnfeld')">-</button></td>
 			</tr>
 		</table>
 
@@ -168,16 +168,16 @@
 
 		function increase(field) {
 
-			field=='sekundenZehnfeld' && (parseInt(document.getElementById(field).value) < 5) && (document.getElementById(field).value = parseInt(document.getElementById(field).value) + 1);
-			field!='sekundenZehnfeld' &&(parseInt(document.getElementById(field).value) < 9) && (document.getElementById(field).value = parseInt(document.getElementById(field).value) + 1);
-			document.getElementById('minuten').innerHTML = document.getElementById('minutenfeld').value;
-			document.getElementById('sekunden').innerHTML = document.getElementById('sekundenZehnfeld').value + document.getElementById('sekundenEinzelnfeld').value;
+			field=='sekundenZehnfeld' && (parseInt(document.getElementById(field).innerHTML) < 5) && (document.getElementById(field).innerHTML = parseInt(document.getElementById(field).innerHTML) + 1);
+			field!='sekundenZehnfeld' &&(parseInt(document.getElementById(field).innerHTML) < 9) && (document.getElementById(field).innerHTML = parseInt(document.getElementById(field).innerHTML) + 1);
+			document.getElementById('minuten').innerHTML = document.getElementById('minutenfeld').innerHTML;
+			document.getElementById('sekunden').innerHTML = document.getElementById('sekundenZehnfeld').innerHTML + document.getElementById('sekundenEinzelnfeld').innerHTML;
 			fillTable();
 		}
 		function decrease(field) {
-			(parseInt(document.getElementById(field).value) > 0) && (document.getElementById(field).value = parseInt(document.getElementById(field).value) - 1);
-			document.getElementById('minuten').innerHTML = document.getElementById('minutenfeld').value;
-			document.getElementById('sekunden').innerHTML = document.getElementById('sekundenZehnfeld').value + document.getElementById('sekundenEinzelnfeld').value;
+			(parseInt(document.getElementById(field).innerHTML) > 0) && (document.getElementById(field).innerHTML = parseInt(document.getElementById(field).innerHTML) - 1);
+			document.getElementById('minuten').innerHTML = document.getElementById('minutenfeld').innerHTML;
+			document.getElementById('sekunden').innerHTML = document.getElementById('sekundenZehnfeld').innerHTML + document.getElementById('sekundenEinzelnfeld').innerHTML;
 			fillTable();
 		}
 
