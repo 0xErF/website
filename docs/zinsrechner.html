@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<h1>Zinsrechner und Rentenrechner</h1>
+	</head>
+
+
+
+	<body>
+		Dieses Tool rechnet das Vermögen nach X Jahren bei Startkapital Y und Zins Z aus.
+		<br>
+		Außerdem die monatliche Entnahme in der Rente.
+
+		<br>
+		<br>
+		<input type="number" id="startkapital" value=10000 onChange="endkapital()" onInput="endkapital()">
+		Startkapital
+		<br>
+		<input type="number" id="zins" value=6 onChange="endkapital()" onInput="endkapital()">
+		Zins in Prozent (konstant)
+		<br>
+		<input type="number" id="jahre" value=12 onChange="endkapital()" onInput="endkapital()">
+		Zeitraum in Jahren
+		<br>
+		<br>
+
+		<h2>Ergebnis:</h2>
+		<span id="ergebnisBrutto">2</span>€ Brutto.
+		<br>
+		<span id="ergebnisKapitalertragssteuer">3</span>€ nach Kapitalertragssteuer (
+			<input type="number" id="kapitalertragssteuer" value=26.375 style='width:10ch' onChange="endkapital()" onInput="endkapital()">
+		%).
+		<br>
+		<span id="ergebnisInflation">4</span>€ in heutigem Wert (inflationsbereinigt, wenn man
+			<input type="number" id="inflation" value=2.0 max=50 step=0.1 style='width:6ch' onChange="endkapital()" onInput="endkapital()">
+			% Inflation annimmt).
+		<br>
+		<br>
+		Wenn du
+			<input type="number" id="rentenjahre" value=25 max=50 style='width:5ch' onChange="endkapital()" onInput="endkapital()">
+		Jahre Rentner bist, hast du dadurch in heutigem Wert (inflationsbereinigt):<br>
+		<span id="ergebnisRente">3</span>€ pro Monat zusätzlich.
+
+	</body>
+
+
+
+	<script>
+		endkapital();
+		function endkapital() {
+			let startkapital = parseInt(document.getElementById('startkapital').value);
+			let zins = 1 + (0.01*parseFloat(document.getElementById('zins').value));
+			let jahre = parseInt(document.getElementById('jahre').value);
+
+			let bruttoergebnis=startkapital*zins**jahre;
+			document.getElementById('ergebnisBrutto').innerText = Math.floor(bruttoergebnis).toLocaleString() + getDecimalPart(bruttoergebnis).toLocaleString();
+
+			let kapitalertragssteuerergebnis=berechneAbzueglichKapitalertragssteuer(bruttoergebnis, startkapital);
+			document.getElementById('ergebnisKapitalertragssteuer').innerText = Math.floor(kapitalertragssteuerergebnis).toLocaleString()
+												+ getDecimalPart(kapitalertragssteuerergebnis).toLocaleString();
+
+			let inflationsergebnis=berechneAbzueglichInflation(kapitalertragssteuerergebnis, jahre);
+			document.getElementById('ergebnisInflation').innerText = Math.floor(inflationsergebnis).toLocaleString()
+												+ getDecimalPart(inflationsergebnis).toLocaleString();
+
+			let monatlicheRente=berechneMonatlicheRente(inflationsergebnis);
+			document.getElementById('ergebnisRente').innerText = Math.floor(monatlicheRente).toLocaleString()
+												+ getDecimalPart(monatlicheRente).toLocaleString();
+		}
+		function berechneAbzueglichKapitalertragssteuer(bruttoergebnis, startkapital) {
+			let steuer = parseFloat(document.getElementById('kapitalertragssteuer').value);
+			return startkapital + (bruttoergebnis - startkapital)* (1 - steuer*0.01);
+		}
+		function berechneAbzueglichInflation(kapitalertragssteuerergebnis, jahre) {
+			let inflation = parseFloat(document.getElementById('inflation').value);
+			return kapitalertragssteuerergebnis / ((1+ 0.01*inflation)**jahre);
+		}
+		function berechneMonatlicheRente(inflationsergebnis) {
+			let rentenjahre = parseFloat(document.getElementById('rentenjahre').value);
+			return inflationsergebnis/rentenjahre/12;
+		}
+		function getDecimalPart(num) {
+			return (num % 1).toFixed(2).substring(1);
+		}
+
+
+	</script>
+
+
+	<style>
+	</style>
+</html>
