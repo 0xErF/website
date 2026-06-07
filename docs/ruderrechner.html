@@ -24,7 +24,6 @@
 
 		<br>
 		<br>
-		Pace: <span id="minuten">2</span>:<span id="sekunden">10</span> per 500m
 		<table>
 			<tr>
 				<td>Min</td>
@@ -48,7 +47,10 @@
 				<td align="center"><button type="button" onClick="decrease('sekundenEinzelnfeld')">-</button></td>
 			</tr>
 		</table>
-
+		<br>
+		<b>Pace:</b> <span id="minuten">2</span>:<span id="sekunden">10</span> per 500m
+		<br>
+		<b>Watt:</b> <span id="watt">100</span>
 		<br>
 		<br>
 		<table>
@@ -119,6 +121,7 @@
 			let minuten = document.getElementById('minuten').innerHTML;
 			let sekunden = document.getElementById('sekunden').innerHTML;
 
+			document.getElementById('watt').innerText = Math.round(2.8/Math.pow((Number(minuten*60) + Number(sekunden.padStart(2, '0')))/500 , 3));
 			document.getElementById('500m').innerText = minuten + ":" + sekunden.padStart(2, '0');
 			document.getElementById('1000m').innerText = getMinutenOhneStunden(calculateTime(1000)) + ":"
 									+ getSekundenOhneStundenMinuten(calculateTime(1000)).toString().padStart(2, '0');
