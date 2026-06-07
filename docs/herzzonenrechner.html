@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<h1>Herzzonenrechner</h1>
+	</head>
+
+
+
+	<body>
+		Dieses Tool berechnet die Trainingszonen mittels Herzfrequenz-Reserve und Einteilungen nach British Rowing.<br>
+		Siehe  <a href="https://plus.britishrowing.org/2023/01/30/designing-an-elite-rowing-training-programme-2-training-intensity/">britishrowing.org</a>
+		und  <a href="https://plus.britishrowing.org/wp-content/uploads/2023/01/GBRowingTeam_TrainingMatrix.pdf">Trainingsmatrix PDF</a>
+
+		<br>
+		<br>
+		<input type="number" id="maxrate" value=190 min="1" max="999" onChange="calculate()" onInput="calculate()">
+		Maximale Herzfrequenz
+		<br>
+		<input type="number" id="restrate" value=65 min="1" max="150" onChange="calculate()" onInput="calculate()">
+		Ruhepuls morgens (nicht der Schlafpuls)
+		<br>
+		<br>
+
+		<table>
+			<tr>
+				<th>Zone</th>
+				<th>Herzfrequenz<br>Ruhepuls+Reserve*%</th>
+				<th>Blutmenge<br>erhöhen</th>
+				<th>Aerobe Enzyme<br>erhöhen</th>
+				<th>Fettverbrennung<br>erhöhen</th>
+				<th>Bildung Blutgefäße</th>
+				<th>Herzzeitvolumen<br>erhöhen (l/min)</th>
+				<th>Atemgrenzwert<br>erhöhen (l/min)</th>
+				<th>Laktatverwertung<br>erhöhen</th>
+				<th>Glykogenverwertung<br>schneller</th>
+				<th>Pufferkapazität<br>Muskel/Blut erhöhen</th>
+				<th>Rennspezifische<br>Neuro/Muskel Anpassungen</th>
+			</tr>
+			<tr bgcolor= "lightblue">
+				<td align='middle'>UT3 - Fuel Utilization</td>
+				<td id='ut3' align='right'>-59%</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+			</tr>
+			<tr bgcolor= "limegreen">
+				<td align='middle'>UT2 - Basic Oxigen Utilization</td>
+				<td id='ut2' align='right'>59-67%</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+			</tr>
+			<tr bgcolor= "#7A8B5B">
+				<td align='middle'>UT1 - Oxigen Utilization</td>
+				<td id='ut1' align='right'>67-75%</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+			</tr>
+			<tr bgcolor= "yellow">
+				<td align='middle'> AT - Anaerobic Threshold</td>
+				<td id='at' align='right'>75-85%</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬛⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+			</tr>
+			<tr bgcolor= "orange">
+				<td align='middle'> TR - Oxygen Transport</td>
+				<td id='tr' align='right'>85-100%</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+			</tr>
+			<tr bgcolor= "red">
+				<td align='middle'> AC - Anaerobic Capacity</td>
+				<td></td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬛⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+			</tr>
+			<tr bgcolor= "darkred">
+				<td align='middle'> AP - Anaerobic Power</td>
+				<td></td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬜⬜⬜⬜</td>
+				<td align='middle'>⬛⬛⬛⬛</td>
+			</tr>
+		</table>
+	</body>
+
+
+
+	<script>
+		calculate();
+		function calculate() {
+			let maxrate = Number(document.getElementById('maxrate').value);
+			let restrate = Number(document.getElementById('restrate').value);
+
+			///document.getElementById('ut3').innerText = restrate + ((maxrate - restrate)*0.59);
+			document.getElementById('ut3').innerText = Math.round(restrate + (maxrate - restrate)*0.59) + " (<59%)";
+			document.getElementById('ut2').innerText = Math.round(restrate + (maxrate - restrate)*0.59)
+									+ " - "
+									+ Math.round(restrate + (maxrate - restrate)*0.67)
+									+ " (59-67%)";
+			document.getElementById('ut1').innerText = Math.round(restrate + (maxrate - restrate)*0.67)
+									+ " - "
+									+ Math.round(restrate + (maxrate - restrate)*0.75)
+									+ " (67-75%)";
+			document.getElementById('at').innerText = Math.round(restrate + (maxrate - restrate)*0.75)
+									+ " - "
+									+ Math.round(restrate + (maxrate - restrate)*0.85)
+									+ " (75-85%)";
+			document.getElementById('tr').innerText = Math.round(restrate + (maxrate - restrate)*0.85)
+									+ " - "
+									+ maxrate
+									+ " (85-100%)";
+		}
+
+	</script>
+
+
+	<style>
+		th {
+			padding: 15px;
+			border-spacing: 30px;
+		}
+	</style>
+</html>
