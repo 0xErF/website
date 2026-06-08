@@ -146,22 +146,22 @@
 		function calculate() {
 			let maxrate = Number(document.getElementById('maxrate').value);
 			let restrate = Number(document.getElementById('restrate').value);
+			let reserve = maxrate - restrate;
 
-			///document.getElementById('ut3').innerText = restrate + ((maxrate - restrate)*0.59);
-			document.getElementById('ut3').innerText = Math.round(restrate + (maxrate - restrate)*0.59) + " (<59%)";
-			document.getElementById('ut2').innerText = Math.round(restrate + (maxrate - restrate)*0.59)
+			document.getElementById('ut3').innerText = Math.round(restrate + reserve*0.59) + " (<59%)";
+			document.getElementById('ut2').innerText = Math.round(restrate + reserve*0.59)
 									+ " - "
-									+ Math.round(restrate + (maxrate - restrate)*0.67)
+									+ Math.round(restrate + reserve*0.67)
 									+ " (59-67%)";
-			document.getElementById('ut1').innerText = Math.round(restrate + (maxrate - restrate)*0.67)
+			document.getElementById('ut1').innerText = Math.round(restrate + reserve*0.67)
 									+ " - "
-									+ Math.round(restrate + (maxrate - restrate)*0.75)
+									+ Math.round(restrate + reserve*0.75)
 									+ " (67-75%)";
-			document.getElementById('at').innerText = Math.round(restrate + (maxrate - restrate)*0.75)
+			document.getElementById('at').innerText = Math.round(restrate + reserve*0.75)
 									+ " - "
-									+ Math.round(restrate + (maxrate - restrate)*0.85)
+									+ Math.round(restrate + reserve*0.85)
 									+ " (75-85%)";
-			document.getElementById('tr').innerText = Math.round(restrate + (maxrate - restrate)*0.85)
+			document.getElementById('tr').innerText = Math.round(restrate + reserve*0.85)
 									+ " - "
 									+ maxrate
 									+ " (85-100%)";
