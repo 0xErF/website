@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<h1>High Protein Rechner</h1>
+	</head>
+
+
+
+	<body>
+		Dieses Tool sagt, ob ein Produkt das "High Protein" Label tragen darf.
+
+		<br>
+		<br>
+		<input type="number" id="fett" value=10 min="0" max="999" onChange="calculate()" onInput="calculate()">
+		Fett
+		<br>
+		<input type="number" id="eiweiß" value=10 min="0" max="999" onChange="calculate()" onInput="calculate()">
+		Eiweiß
+		<br>
+		<input type="number" id="kohlenhydrate" value=10 min="0" max="999" onChange="calculate()" onInput="calculate()">
+		Kohlenhydrate
+		<br>
+		<br>
+
+		<b>Kalorien Gesamt</b> <span id="kalorien_gesamt">100</span>
+		<br>
+		<b>Kalorien Eiweiß</b> <span id="kalorien_eiweiß">100</span>
+		<br>
+		<br>
+		<b>High Protein:</b>
+		<br>
+		<br>
+		<span id="high_protein">nein</span>
+
+	</body>
+
+
+
+	<script>
+		calculate();
+		function calculate() {
+			let fett = document.getElementById('fett').value;
+			let eiweiß = document.getElementById('eiweiß').value;
+			let kohlenhydrate = document.getElementById('kohlenhydrate').value;
+
+			let kalorien_gesamt = document.getElementById('kalorien_gesamt').value;
+			let kalorien_eiweiß = document.getElementById('kalorien_eiweiß').value;
+			let high_protein = document.getElementById('high_protein').value;
+
+			kalorien_gesamt = fett*9 + eiweiß*4 + kohlenhydrate*4;
+			kalorien_eiweiß = eiweiß*4;
+			high_protein = (kalorien_eiweiß / kalorien_gesamt) >= 0.2
+				? "✔️ja, Eiweißkalorien sind über 20% der Gesamtkalorien"
+				: "❌nein, Eiweißkalorien sind unter 20% der Gesamtkalorien";
+
+			document.getElementById('kalorien_gesamt').innerText = kalorien_gesamt;
+			document.getElementById('kalorien_eiweiß').innerText = kalorien_eiweiß;
+			document.getElementById('high_protein').innerText = high_protein;
+		}
+
+	</script>
+
+
+	<style>
+		th {
+			padding: 15px;
+			border-spacing: 30px;
+		}
+		tr:nth-child(odd) {background: #CCC}
+		tr:nth-child(even) {background: #FFF}
+	</style>
+</html>
